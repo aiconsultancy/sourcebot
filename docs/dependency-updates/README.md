@@ -18,9 +18,9 @@ successful installation.
 
 The AI SDK family is explicitly pinned at baseline after its newer tool
 description/execution contracts caused eleven errors in unchanged EE TypeScript
-consumers. The captain approved deferring those updates rather than editing EE.
+consumers. Those updates are deferred rather than changing EE code.
 Its residual provider-utils advisories are retained and reported below.
-`@types/psl` stays at1.1.3 because the newer1.11.0 is an empty deprecated stub
+`@types/psl` stays at 1.1.3 because the newer 1.11.0 is an empty deprecated stub
 that prevents TypeScript compilation. No tests or type checks were bypassed.
 
 The only hand-written source compatibility changes preserve runtime behaviour:
@@ -41,52 +41,69 @@ cd vendor/zoekt
 go test -modfile=../zoekt-dependencies/go.mod -mod=readonly ./...
 ```
 
-Retained go-enry2.9.1 because2.9.6 changes the returned language name from
+Retained go-enry 2.9.1 because 2.9.6 changes the returned language name from
 Mathematica to Wolfram Language and fails the unchanged language test. Retained
-gobwas/glob0.2.3 rather than taking major1.1.0. Major-versioned module-path
+gobwas/glob 0.2.3 rather than taking major 1.1.0. Major-versioned module-path
 migrations, such as go-github/v78 to a newer /vN, are outside this patch/minor
 refresh. No newer Zoekt code is imported from its non-descendant upstream main.
 
 The seven verified higher-major module candidates are listed in
 [deferred-go.csv](deferred-go.csv). The bounded direct-module proxy inventory
-checked paths through/v6, or/v90 for go-github; higher paths remain unverified.
+checked paths through /v6, or /v90 for go-github; higher paths remain unverified.
 Eight queries timed out, so this is not an exhaustive absence claim.
 
-The image uses digest-pinned Node24.22.3 on Alpine3.23 and Go1.26.11 on
-Alpine3.24, preserving each existing line. Runtime Alpine packages are upgraded
-by the existing Dockerfile. The required universal-ctags6.1.0 compatibility pin
+The image uses digest-pinned Node 24.22.3 on Alpine 3.23 and Go 1.26.11 on
+Alpine 3.24, preserving each existing line. Runtime Alpine packages are upgraded
+by the existing Dockerfile. The required universal-ctags 6.1.0 compatibility pin
 is unchanged.
 
 ## Checks and remaining vulnerabilities
 
 | Check | Baseline | Updated source |
 | --- | --- | --- |
-| JavaScript tests |2272pass |2272pass |
-| Type checks |7workspaces pass |7workspaces pass |
-| Go tests |1084pass,25skip |1084pass,25skip |
-| Yarn audit records |55 |7 |
-| Critical package audit records |4 |0 |
+| JavaScript tests | 2,272 pass | 2,272 pass |
+| Type checks | 7 workspaces pass | 7 workspaces pass |
+| Go tests | 1,084 pass, 25 skip | 1,084 pass, 25 skip |
+| Yarn audit records | 55 | 7 |
+| Critical package audit records | 4 | 0 |
+| Trivy image records | 105 | 9 |
+| Critical image records | 2 | 0 |
+| Distinct image package/advisory pairs | 33 | 4 |
 
 The shared validation tests run with SKIP_ENV_VALIDATION unset. Run
 `next typegen` before a standalone web type check; Next generates the image
-module declarations. The web type check uses a bounded4GiB Node heap.
+module declarations. The web type check uses a bounded 4 GiB Node heap.
 Go tests run under the same isolated environment for baseline and updated code;
 skips, including unavailable ctags coverage, are not passes.
 
 Audit details are in [package-audit.csv](package-audit.csv). Residual records:
 
-- High: deepmerge-ts7.1.5, picomatch2.3.2/4.0.7 and zod3.25.76.
+- High: deepmerge-ts 7.1.5, picomatch 2.3.2/4.0.7 and zod 3.25.76.
   The published fixes require a new major or are not published in the selected
   stable line. Zod3 consumers cannot be migrated without separate compatibility
   work, including EE consumers. No forced cross-major transitive override.
-- Moderate: glob10/11/13 and minimatch9/10. The advisory fixes require glob14
-  or minimatch11; overriding the callers' major contracts is not a compatible
+- Moderate: glob 10/11/13 and minimatch 9/10. The fixes require glob 14
+  or minimatch 11; overriding the callers' major contracts is not a compatible
   patch for this update.
-- Low: two provider-utils version records,4.0.23 and5.0.0-beta.7, share one
+- Low: two provider-utils version records, 4.0.23 and 5.0.0-beta.7, share one
   advisory. They remain under the approved AI SDK baseline deferral.
 
 The pinned Trivy scanner reports image findings without applying `.trivyignore`.
 The before/after package/advisory table is [image-scan.csv](image-scan.csv);
 target counts distinguish repeated findings across the bundled Go binaries.
-The baseline has105 records,33 distinct package/advisory pairs. Updated image
-scan and live image/rollback acceptance are recorded after the ARM64 build.
+The baseline has 105 records and 33 distinct package/advisory pairs. The updated
+image has 9 records, 5 high and 4 medium, from 4 distinct package/advisory pairs.
+The remaining image findings are deepmerge-ts, glob, minimatch and picomatch,
+with the same compatibility limits listed above. All previous Go binary findings
+are cleared. Package audit and Trivy use different advisory databases, so their
+result sets are not identical.
+
+The Linux ARM64 image builds from PR source commit `59aa10d9` with a 6 GiB
+per-build-container limit and a 4 GiB web Node heap. Sequential targets took
+1,056 seconds. The host memory guard observed at least 2.97 GiB available;
+no abort or kernel OOM occurred. Node heap configuration is build-only.
+The installed PostgreSQL 16 and Redis 8 digests still match their current line
+tags, so they need no image change. Yarn 4.7.0 remains the repository bootstrap
+pin; this refresh changes the workspace dependency graph, not the bootstrap CLI.
+
+Live health/search, private ingress and rollback acceptance remain pending.

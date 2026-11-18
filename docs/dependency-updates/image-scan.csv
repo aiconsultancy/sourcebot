@@ -36,3 +36,10 @@ baseline,vite,8.0.16,LOW,CVE-2026-112945,"8.3.3, 8.2.4, 8.1.6, 7.3.7, 6.4.4",1
 baseline,vite,8.0.16,MEDIUM,CVE-2026-112943,"8.3.3, 8.2.4, 8.1.6, 7.3.7, 6.4.4",1
 baseline,vite,8.0.16,MEDIUM,CVE-2026-112944,"8.3.3, 8.2.4, 8.1.6, 7.3.7, 6.4.4",1
 baseline,vite,8.0.16,MEDIUM,CVE-2026-112946,"8.3.3, 8.2.4, 8.1.6, 7.3.7, 6.4.4",1
+updated,deepmerge-ts,7.1.5,HIGH,CVE-2026-40345,8.0.0,1
+updated,glob,10.5.0,MEDIUM,CVE-2026-118773,14.0.2,1
+updated,glob,11.1.0,MEDIUM,CVE-2026-118773,14.0.2,1
+updated,minimatch,10.2.6,MEDIUM,CVE-2026-118764,11.0.1,1
+updated,minimatch,9.0.9,MEDIUM,CVE-2026-118764,11.0.1,1
+updated,picomatch,2.3.2,HIGH,CVE-2026-112366,,3
+updated,picomatch,4.0.7,HIGH,CVE-2026-112366,,1

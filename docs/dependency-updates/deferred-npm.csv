@@ -45,18 +45,18 @@ zod,packages/shared/package.json,^3.25.76,4.6.7,Major upgrade requires separate 
 tsc-watch,packages/shared/package.json,6.3.1,7.2.1,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
 typescript,packages/shared/package.json,^5.9.3,7.0.2,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
 vitest,packages/shared/package.json,^4.1.12,5.1.0,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
-@ai-sdk/amazon-bedrock,packages/web/package.json,4.0.94,5.0.145,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/anthropic,packages/web/package.json,3.0.70,4.0.106,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/azure,packages/web/package.json,3.0.54,4.0.129,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/deepseek,packages/web/package.json,2.0.29,3.0.88,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/google,packages/web/package.json,3.0.64,4.0.122,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/google-vertex,packages/web/package.json,4.0.111,5.0.142,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/mcp,packages/web/package.json,2.0.0-beta.11,2.0.101,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/mistral,packages/web/package.json,3.0.30,4.0.88,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/openai,packages/web/package.json,3.0.53,4.0.121,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/openai-compatible,packages/web/package.json,2.0.41,3.0.93,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/react,packages/web/package.json,3.0.169,4.0.180,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
-@ai-sdk/xai,packages/web/package.json,3.0.83,5.0.47,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/amazon-bedrock,packages/web/package.json,4.0.94,5.0.145,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/anthropic,packages/web/package.json,3.0.70,4.0.106,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/azure,packages/web/package.json,3.0.54,4.0.129,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/deepseek,packages/web/package.json,2.0.29,3.0.88,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/google,packages/web/package.json,3.0.64,4.0.122,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/google-vertex,packages/web/package.json,4.0.111,5.0.142,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/mcp,packages/web/package.json,2.0.0-beta.11,2.0.101,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/mistral,packages/web/package.json,3.0.30,4.0.88,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/openai,packages/web/package.json,3.0.53,4.0.121,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/openai-compatible,packages/web/package.json,2.0.41,3.0.93,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/react,packages/web/package.json,3.0.169,4.0.180,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+@ai-sdk/xai,packages/web/package.json,3.0.83,5.0.47,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
 @anthropic-ai/sdk,packages/web/package.json,^0.137.0,1.10.0,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
 @gitbeaker/rest,packages/web/package.json,^40.6.0,44.1.5,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
 @hookform/resolvers,packages/web/package.json,^3.10.0,7.0.7,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
@@ -67,7 +67,7 @@ vitest,packages/shared/package.json,^4.1.12,5.1.0,Major upgrade requires separat
 @sentry/nextjs,packages/web/package.json,^10.78.0,11.14.0,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
 @sentry/profiling-node,packages/web/package.json,^10.78.0,11.14.0,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
 @tanstack/react-table,packages/web/package.json,^8.21.3,9.3.1,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
-ai,packages/web/package.json,6.0.167,7.0.176,Baseline pin approved by captain: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
+ai,packages/web/package.json,6.0.167,7.0.176,Baseline pin: newer SDK changes EE tool description/execution contracts; EE edits forbidden.
 cm6-graphql,packages/web/package.json,^0.2.2,1.0.0,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
 codemirror,packages/web/package.json,^5.65.21,6.65.7,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
 google-auth-library,packages/web/package.json,^10.9.1,11.3.4,Major upgrade requires separate API/behaviour compatibility work; this change preserves v5 consumers and EE code.
