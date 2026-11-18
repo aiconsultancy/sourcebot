@@ -47,6 +47,11 @@ gobwas/glob0.2.3 rather than taking major1.1.0. Major-versioned module-path
 migrations, such as go-github/v78 to a newer /vN, are outside this patch/minor
 refresh. No newer Zoekt code is imported from its non-descendant upstream main.
 
+The seven verified higher-major module candidates are listed in
+[deferred-go.csv](deferred-go.csv). The bounded direct-module proxy inventory
+checked paths through/v6, or/v90 for go-github; higher paths remain unverified.
+Eight queries timed out, so this is not an exhaustive absence claim.
+
 The image uses digest-pinned Node24.22.3 on Alpine3.23 and Go1.26.11 on
 Alpine3.24, preserving each existing line. Runtime Alpine packages are upgraded
 by the existing Dockerfile. The required universal-ctags6.1.0 compatibility pin

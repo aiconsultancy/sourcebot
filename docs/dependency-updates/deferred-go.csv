@@ -1,0 +1,8 @@
+module,current,candidate_path,candidate_version,reason
+github.com/RoaringBitmap/roaring,v1.9.4,github.com/RoaringBitmap/roaring/v2,v2.30.0,module path and imports change; assess API and behaviour
+github.com/bmatcuk/doublestar,v1.3.4,github.com/bmatcuk/doublestar/v4,v4.10.4,module path and imports change; assess API and behaviour
+github.com/gobwas/glob,v0.2.3,github.com/gobwas/glob,v1.1.0,major API and behaviour migration; unversioned or +incompatible path; v1.1.0 is a major change from v0
+github.com/google/go-github/v78,v78.0.0,github.com/google/go-github/v90,v90.0.0,module path and imports change; assess API and behaviour
+github.com/grpc-ecosystem/go-grpc-middleware,v1.4.0,github.com/grpc-ecosystem/go-grpc-middleware/v2,v2.3.4,module path and imports change; assess API and behaviour
+github.com/shirou/gopsutil/v3,v3.24.5,github.com/shirou/gopsutil/v4,v4.26.10,module path and imports change; assess API and behaviour
+gitlab.com/gitlab-org/api/client-go,v1.46.0,gitlab.com/gitlab-org/api/client-go/v3,v3.52.0,module path and imports change; assess API and behaviour
