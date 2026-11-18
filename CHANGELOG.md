@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Refreshed compatible v5 dependencies and pinned patched build images while retaining documented compatibility exceptions. [#1](https://github.com/aiconsultancy/sourcebot/pull/1)
+
 ## [5.1.16] - 2026-10-09
 
 ### Added
