@@ -17,14 +17,14 @@
         "tool:run-script": "tsx tools/scriptRunner.ts"
     },
     "devDependencies": {
-        "@types/argparse": "^2.0.16",
+        "@types/argparse": "^2.0.17",
         "argparse": "^2.0.1",
-        "prisma": "^6.2.1",
-        "tsx": "^4.21.0",
-        "typescript": "^5.7.3"
+        "prisma": "^6.19.3",
+        "tsx": "^4.23.15",
+        "typescript": "^5.9.3"
     },
     "dependencies": {
-        "@prisma/client": "6.2.1",
+        "@prisma/client": "6.19.3",
         "@types/readline-sync": "^1.4.8",
         "readline-sync": "^1.4.10"
     }

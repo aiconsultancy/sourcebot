@@ -13,18 +13,19 @@ ARG NEXT_PUBLIC_SENTRY_WEBAPP_DSN
 ARG NEXT_PUBLIC_SENTRY_BACKEND_DSN
 ARG NEXT_PUBLIC_BUILD_COMMIT_SHA
 
-FROM node:24-alpine3.23 AS node-alpine
-FROM golang:1.26-alpine AS go-alpine
+FROM node:24.22.3-alpine3.23@sha256:3946fb783fdce8a2812136ea694bc95c698c4f4096f3fd18568dc27a8ac389dc AS node-alpine
+FROM golang:1.26.11-alpine3.24@sha256:ecb67f987aa1a57794c91d19ade7ae0209f2f0f5496aaef9e6ae85ddf92d02ab AS go-alpine
 # ----------------------------------
 
 # ------ Build Zoekt ------
 FROM go-alpine AS zoekt-builder
 RUN apk add --no-cache ca-certificates
 WORKDIR /zoekt
-COPY vendor/zoekt/go.mod vendor/zoekt/go.sum ./
+COPY vendor/zoekt-dependencies/go.mod vendor/zoekt-dependencies/go.sum ./
 RUN go mod download
 COPY vendor/zoekt ./
-RUN CGO_ENABLED=0 GOOS=linux go build -o /cmd/ ./cmd/...
+COPY vendor/zoekt-dependencies/go.mod vendor/zoekt-dependencies/go.sum ./
+RUN CGO_ENABLED=0 GOOS=linux go build -mod=readonly -o /cmd/ ./cmd/...
 # -------------------------
 
 # ------ Build shared libraries ------

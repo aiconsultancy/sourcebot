@@ -24,20 +24,20 @@
         "test:live": "node tests/e2e/liveSmoke.mjs"
     },
     "dependencies": {
-        "@inquirer/prompts": "^8.4.3",
+        "@inquirer/prompts": "^8.8.0",
         "chalk": "^5.6.2",
         "inquirer-select-pro": "^1.0.0-alpha.9",
-        "ora": "^9.4.0",
-        "posthog-node": "5.52.1",
+        "ora": "^9.4.1",
+        "posthog-node": "5.74.0",
         "reo-census": "^1.2.10"
     },
     "devDependencies": {
         "@sourcebot/schemas": "workspace:^",
         "@types/node": "^20.19.43",
         "node-pty": "^1.1.0",
-        "tsx": "^4.21.0",
-        "typescript": "^5.6.2",
-        "undici": "^7"
+        "tsx": "^4.23.15",
+        "typescript": "^5.9.3",
+        "undici": "^7.30.2"
     },
     "engines": {
         "node": "^20.20.0 || ^22.22.0 || >=23.5.0"

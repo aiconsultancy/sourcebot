@@ -4,7 +4,7 @@ import {negateToken, parenToken, wordToken, closeParenToken, orToken} from "./to
 export const parser = LRParser.deserialize({
   version: 14,
   states: "'hOVQwOOO!WQtO'#CcO!WQtO'#CdO!WQtO'#CeO!WQtO'#CfO!`QpO'#CgO!kQpO'#ChO!WQtO'#CiO!WQtO'#CjO!WQtO'#CkO!WQtO'#ClOOQo'#Ca'#CaO!vQ!PO'#CmO!}QrO'#C`OOQo'#Cn'#CnOOQo'#Co'#CoOOQo'#C|'#C|O#uQ!aO'#C{O$SQ!YO'#C{O$_Q!QO'#C^OOQW'#Cz'#CzQOQpOOO!`QpO'#CbOOQo'#DS'#DSOOQo,58},58}OOQo,59O,59OOOQo,59P,59POOQo,59Q,59QOOQo'#DY'#DYOOQo,59R,59ROOQo'#D['#D[OOQo,59S,59SOOQo,59T,59TOOQo,59U,59UOOQo,59V,59VOOQo,59W,59WOOQo,59X,59XO$dQxO,59XOOQo,58z,58zOOQo'#Cp'#CpO$iQ!aO,58yOVQwO'#CqO$vQ!YO,58xOOQo,58|,58|OOQo1G.s1G.sOOQo-E6n-E6nO%RQ!aO'#C{OOQh'#C{'#C{OOQh,59],59]OOQh-E6o-E6o",
-  stateData: "%n~OmOS~Og]Oh[Oi_OqfOuPOw^OxQOyROzSO{TO}UO!SVO!TWO!UXO!VYO~OigOwgO~OrlOslOtlO~O!PnO!QnO!RnO~OjtO~PVOh[OqfOuPOxQOyROzSO{TO}UO!SVO!TWO!UXO!VYO~OfnXkoXjnX~PVOfnXkoXjnX~OkyO~Oj|O~OfRakRajRa~PVOkyOfQajQa~OfoXkoXjoX~PVOwquxyz{}!S!T!U!V{~",
+  stateData: "%m~OmOS~Og]Oh[Oi_OqfOuPOw^OxQOyROzSO{TO}UO!SVO!TWO!UXO!VYO~OigOwgO~OrlOslOtlO~O!PnO!QnO!RnO~OjtO~PVOh[OqfOuPOxQOyROzSO{TO}UO!SVO!TWO!UXO!VYO~OfnXkoXjnX~PVOfnXkoXjnX~OkyO~Oj|O~OfRakRajRa~PVOkyOfQajQa~OfoXkoXjoX~PVOwquxyz{}!S!T!U!V~",
   goto: "$d!PPP!Q!U!]!e!p!p!p!p!p!p!p!p!p!p!p!e!]!]!y#QPPPPPPPP#W#^#ePPPPP#qPPPPP$ZP$aTdO[SbO[R!Py]`O[axy!O[`O[axy!ORv]_ZO[]axy!OSxa!OR}xQzcR!RzQeORu[ScO[R!QySaO[Uwax!OR!OyQhPQiQQjRQkSQpVQqWQrXRsYQmTR{fRoU",
   nodeNames: "⚠ Program OrExpr AndExpr NegateExpr PrefixExpr ArchivedExpr RevisionExpr ContentExpr ContextExpr FileExpr ForkExpr VisibilityExpr RepoExpr LangExpr SymExpr RepoSetExpr ParenExpr QuotedTerm Term",
   maxTerm: 53,

@@ -1,7 +1,7 @@
-import { components } from "@octokit/openapi-types";
+import type { Octokit } from "octokit";
 import { z } from "zod";
 
-export type GitHubPullRequest = components["schemas"]["pull-request"];
+export type GitHubPullRequest = Awaited<ReturnType<Octokit["rest"]["pulls"]["get"]>>["data"];
 
 export const sourcebot_diff_schema = z.object({
     oldSnippet: z.string(),
@@ -101,4 +101,3 @@ export const gitLabNotePayloadSchema = z.object({
     project: gitLabProjectSchema,
 });
 export type GitLabNotePayload = z.infer<typeof gitLabNotePayloadSchema>;
-

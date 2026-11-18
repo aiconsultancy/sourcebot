@@ -31,7 +31,7 @@ test('real SDK transport envelope keeps its permitted metadata and identity', as
             assert.equal(e.properties.install_id, telemetry.setupSessionId);
             assert.deepEqual(e.properties.$groups, { company: telemetry.setupSessionId });
             assert.equal(e.properties.$lib, 'posthog-node');
-            assert.equal(e.properties.$lib_version, '5.52.1');
+            assert.equal(e.properties.$lib_version, '5.74.0');
             assert.equal(e.properties.$geoip_disable, true);
             assert.equal(e.properties.$ignore_sent_at, true);
             assert.equal(e.properties.$is_server, undefined);

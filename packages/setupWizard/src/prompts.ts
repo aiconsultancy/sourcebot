@@ -33,5 +33,5 @@ export const confirm = cancellable(rawConfirm);
 export const input = cancellable(rawInput);
 export const password = cancellable(rawPassword);
 export const select = cancellable(rawSelect);
-export const searchSelect = cancellable(rawSearchSelect);
+export const searchSelect: typeof rawSearchSelect = cancellable(rawSearchSelect);
 export const checkbox = cancellable(tabCheckbox);

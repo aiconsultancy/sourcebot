@@ -9,7 +9,7 @@ yarn:
 
 zoekt:
 	mkdir -p bin
-	go build -C vendor/zoekt -o $(CURDIR)/bin ./cmd/...
+	go build -C vendor/zoekt -modfile=$(CURDIR)/vendor/zoekt-dependencies/go.mod -mod=readonly -o $(CURDIR)/bin ./cmd/...
 	export PATH="$(CURDIR)/bin:$(PATH)"
 	export CTAGS_COMMANDS=ctags
 
