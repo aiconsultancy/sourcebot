@@ -106,4 +106,41 @@ The installed PostgreSQL 16 and Redis 8 digests still match their current line
 tags, so they need no image change. Yarn 4.7.0 remains the repository bootstrap
 pin; this refresh changes the workspace dependency graph, not the bootstrap CLI.
 
-Live health/search, private ingress and rollback acceptance remain pending.
+## Live acceptance and rollback
+
+On 18 November 2026, jr-devbox accepted the updated image
+`sourcebot-nett:net-1698-59aa10d9`, image ID
+`sha256:d5efcc1d91541e222af72da9a41ee1c2fd42a82765c149f46677925fb63a1f4a`.
+The service was then rolled back once to
+`sourcebot-nett:v5.1.16-f9e1a28` and moved forward to the updated image again.
+All three checks passed with the existing data and API key:
+
+- `/api/health` returned `status: ok`; web, backend and Zoekt processes ran.
+- The existing MCP wrapper listed both indexed repositories and returned three
+  code-search matches from Stargate.
+- Port 8101 listened only on `127.0.0.1`. The container had no published ports,
+  used its internal network and had no default route. An external HTTPS request
+  failed with curl exit 7. Repository mirrors remained read-only.
+- The existing Tailscale 8445 route returned version HTTP 200 with TLS verified.
+  The existing 8446 route rejected the local non-peer caller with HTTP 403 and
+  TLS verified. A remote starfleet-vm caller was not tested.
+- The Caddy configuration checksum and API-key file metadata stayed unchanged.
+  Successful authenticated MCP calls confirmed the existing key still worked.
+
+A cold backup preceded the first swap. It includes the runtime home, configuration,
+data and mirrors, plus both PostgreSQL and Redis named volumes. The existing
+mirror-refresh lock excluded writes during backup. Gzip and SHA-256 checks passed.
+The protected host receipt records the private backup location.
+
+Rollback changes only the app image in the existing Compose file to
+`sourcebot-nett:v5.1.16-f9e1a28`, then runs
+`systemctl --user restart sourcebot.service`. Keep mounts, environment, PostgreSQL,
+Redis and routes unchanged. Verify health, component processes and authenticated
+MCP search after restart. This update has no Prisma schema or migration changes,
+so the tested image rollback used the existing data without restoring the backup.
+
+The first attempt restored baseline because its health retry interval was too
+short for startup. One approved retry used a hard 180-second HTTP-readiness
+deadline and passed every phase. Each phase took about 45 seconds. Bounded startup
+logs and process evidence were retained. The updated image remains running;
+the PR is ready for review and unmerged.
